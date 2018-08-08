@@ -4,14 +4,14 @@
 #
 Name     : R-mlbench
 Version  : 2.1.1
-Release  : 11
+Release  : 12
 URL      : https://cran.r-project.org/src/contrib/mlbench_2.1-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/mlbench_2.1-1.tar.gz
 Summary  : Machine Learning Benchmark Problems
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-mlbench-lib
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
 benchmark problems, including, e.g., several data sets from the
@@ -33,11 +33,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1523319376
+export SOURCE_DATE_EPOCH=1533750447
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1523319376
+export SOURCE_DATE_EPOCH=1533750447
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
