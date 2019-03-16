@@ -4,18 +4,19 @@
 #
 Name     : R-mlbench
 Version  : 2.1.1
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/mlbench_2.1-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/mlbench_2.1-1.tar.gz
 Summary  : Machine Learning Benchmark Problems
 Group    : Development/Tools
 License  : GPL-2.0
-Requires: R-mlbench-lib
+Requires: R-mlbench-lib = %{version}-%{release}
 BuildRequires : buildreq-R
 
 %description
-benchmark problems, including, e.g., several data sets from the
-        UCI repository.
+This package contains a collection of real-world datasets and
+functions for creating artificial datasets that work as benchmarks for
+machine learning methods.
 
 %package lib
 Summary: lib components for the R-mlbench package.
@@ -33,11 +34,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1533750447
+export SOURCE_DATE_EPOCH=1552776739
 
 %install
+export SOURCE_DATE_EPOCH=1552776739
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1533750447
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -72,8 +73,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library mlbench|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  mlbench || :
 
 
 %files
@@ -119,10 +119,7 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/mlbench/help/paths.rds
 /usr/lib64/R/library/mlbench/html/00Index.html
 /usr/lib64/R/library/mlbench/html/R.css
-/usr/lib64/R/library/mlbench/libs/symbols.rds
 
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/R/library/mlbench/libs/mlbench.so
-/usr/lib64/R/library/mlbench/libs/mlbench.so.avx2
-/usr/lib64/R/library/mlbench/libs/mlbench.so.avx512
