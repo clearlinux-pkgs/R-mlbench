@@ -4,7 +4,7 @@
 #
 Name     : R-mlbench
 Version  : 2.1.3
-Release  : 38
+Release  : 39
 URL      : https://cran.r-project.org/src/contrib/mlbench_2.1-3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/mlbench_2.1-3.tar.gz
 Summary  : Machine Learning Benchmark Problems
@@ -34,10 +34,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1611974205
+export SOURCE_DATE_EPOCH=1626705981
 
 %install
-export SOURCE_DATE_EPOCH=1611974205
+export SOURCE_DATE_EPOCH=1626705981
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -125,3 +125,4 @@ R CMD check --no-manual --no-examples --no-codoc mlbench || :
 %defattr(-,root,root,-)
 /usr/lib64/R/library/mlbench/libs/mlbench.so
 /usr/lib64/R/library/mlbench/libs/mlbench.so.avx2
+/usr/lib64/R/library/mlbench/libs/mlbench.so.avx512
