@@ -1,5 +1,5 @@
 PKG_NAME := R-mlbench
-URL = https://cran.r-project.org/src/contrib/mlbench_2.1-5.tar.gz
+URL = https://ftp.osuosl.org/pub/cran/src/contrib/mlbench_2.1-6.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
